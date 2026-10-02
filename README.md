@@ -2,6 +2,10 @@
 
 A CLI tool that fixes DRM issues in the Helium browser by copying WidevineCdm from Chrome (or other Chrome-based browsers).
 
+> **Note:** This is a fork of [vikas5914/helium-drm-fixer](https://github.com/vikas5914/helium-drm-fixer). All credit goes to [@vikas5914](https://github.com/vikas5914). I do not own the original project.
+
+> **Used by:** [PHNexus/Hyprland-configs](https://github.com/PHNexus/Hyprland-configs) — this tool is automatically run by the dotfiles `install.sh` to fix DRM for the Helium browser.
+
 ## Why Helium DRM?
 
 Helium browser often has issues with DRM-protected content because it doesn't include WidevineCdm. This tool automatically copies WidevineCdm from your Chrome installation to Helium, enabling basic Widevine support for sites that accept it.
@@ -57,6 +61,15 @@ sudo bun run cli.ts --chrome-path /usr/bin/google-chrome-stable --helium-path /u
 
 You can find the path on your system by running `which google-chrome-stable` on macOS and Linux.
 
+## Automatic install via Hyprland-configs
+
+If you're using the [Hyprland-configs](https://github.com/PHNexus/Hyprland-configs) dotfiles, this tool is run automatically by the `install.sh` script:
+
+- Temporarily installs Google Chrome via AUR
+- Runs the DRM fix against the Helium installation
+- Uninstalls Chrome and cleans up traces
+- No manual steps needed
+
 ## Development
 
 ```bash
@@ -89,9 +102,10 @@ Make sure you have write permissions to the Helium application directory.
 
 ## License
 
-This project is private.
+MIT — original license belongs to [@vikas5914](https://github.com/vikas5914).
 
 ## Credits
 
-- [Helium Browser](https://helium.is/) - The browser this tool fixes
-- [Bun](https://bun.sh/) - Fast JavaScript runtime
+- [@vikas5914](https://github.com/vikas5914) — original author
+- [Helium Browser](https://helium.is/) — the browser this tool fixes
+- [Bun](https://bun.sh/) — fast JavaScript runtime
